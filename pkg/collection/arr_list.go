@@ -47,7 +47,7 @@ func (a *List[T]) RemoveAll() {
 	a.list = append(a.list[0:0])
 }
 
-func (a *List[T]) Get(index int) (T, error) {
+func (a List[T]) Get(index int) (T, error) {
 	var def T
 	if len(a.list) <= index {
 		return def, errors.New("error: invalid index")
@@ -55,7 +55,7 @@ func (a *List[T]) Get(index int) (T, error) {
 	return a.list[index], nil
 }
 
-func (a *List[T]) GetAll() []T {
+func (a List[T]) GetAll() []T {
 
 	return a.list
 }
